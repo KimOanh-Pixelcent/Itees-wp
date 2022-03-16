@@ -1,0 +1,60 @@
+/*
+ Theme Name:   Twenty thirteen Child
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Thirteen Child Theme
+ Author:       Jan Fjordside
+ Author URI:   http://example.com
+ Template:     twentythirteen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-thirteen-child
+*/
+
+.entry-header, .entry-content, .entry-summary, .entry-meta {
+    max-width: 1200px;
+}
+
+
+#tear{
+	position: fixed;
+	top:0px;
+	right:0px;
+	z-index: 999;
+	width: 220px;
+	height: 220px;
+	background: url('/html5GlobeFiles/images/tear.png');
+}
+#tear a{
+	width: 220px;
+	height: 220px;
+	display: block;
+}
+
+/*office example*/
+
+.officehidden{
+display:block;
+display:none;
+background: #ff7900;
+}
+.showlink{
+margin: 0 0 0 15px;
+cursor: pointer;
+}
+.office h3{
+display: inline;
+}
+.activehotspot{
+border-top: solid 3px #00ff00;
+}
+.office p {
+margin: 0 0 0;
+}
+.activeItem{
+background-color: #ff7900 !important;
+}
+
+
+/*office example*/

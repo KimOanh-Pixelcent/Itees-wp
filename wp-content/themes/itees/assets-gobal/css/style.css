@@ -1,0 +1,390 @@
+
+ 
+.h5g_hidden {
+  display: none;
+}
+
+.h5g_overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.hotspot_marker {
+  position: absolute;
+  display: inline-block;
+}
+
+.earth-ov {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor:pointer;
+}
+ 
+@media only screen and (max-width: 1280px) {
+  .earth-ov {
+    top: 40px;
+    left: 40px;
+  }
+}
+
+.hotspot_marker svg {
+  height: 1vw;
+  width: 1vw;
+}
+@media only screen and (max-width: 570px) {
+  .hotspot_marker svg {
+    width: 1.8vw;
+    height: 1.8vw;
+  }
+}
+ 
+@media only screen and (max-width: 570px) {
+  canvas {
+    max-width: 100vw;
+  }
+}
+
+ 
+#earth-copy, #earth-mob {
+  top: calc(50%);
+  left: var(--page-margin-left);
+  transform: translate3d(0, -50%, 0)!important;
+  z-index: -1;
+  width: 40vw;
+  position: absolute;
+  height: 40vw;
+  right: 0;
+  opacity: 1;
+}
+#earth-copy .h5g_overlay, #earth-mob .h5g_overlay {
+  z-index: 2;
+}
+#earth-copy canvas, #earth-mob canvas {
+  z-index: 1;
+}
+#earth-copy .h5g_overlay, #earth-copy canvas, #earth-mob .h5g_overlay, #earth-mob canvas {
+  max-width: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
+  left: 50%;
+  top: calc(50%) !important;
+  transform: translate(-50%, calc(-50% + 40px));
+}
+#earth-copy.home .h5g_overlay, #earth-copy.home canvas, #earth-mob.home .h5g_overlay, #earth-mob.home canvas {
+  top: 50% !important;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy.home .h5g_overlay, #earth-copy.home canvas, #earth-mob.home .h5g_overlay, #earth-mob.home canvas {
+    max-width: 500px;
+    max-height: 500px;
+  }
+}
+#earth-copy.planning, #earth-mob.planning {
+  opacity: 0;
+  visibility: hidden;
+  left: 50%;
+  left: calc(50%);
+  transform: translate(0px, -50%);
+  top: 50%;
+  right: unset;
+  position: fixed;
+  z-index: 101;
+  width: 50vw;
+  height: 50vw;
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy.planning, #earth-mob.planning {
+    padding-top: unset;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy.planning, #earth-mob.planning {
+    display: none;
+  }
+}
+@media only screen and (min-width:1921px) {
+  #earth-copy, #earth-mob {
+    top: calc(50%);
+    left: var(--page-margin-left);
+    transform: translate3d(0, -50%, 0);
+    z-index: -1;
+    width: 40vw;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #earth-copy, #earth-mob {
+    left: var(--page-margin-left-xxxl);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy, #earth-mob {
+    width: 60%;
+    top: unset;
+    left: unset;
+    position: relative;
+    transform: unset;
+    padding-top: 60%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy, #earth-mob {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #earth-copy, #earth-mob {
+    max-height: 115vw;
+    margin-top: 60px;
+    width: 85%;
+    padding-top: 85%;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #earth-copy.earth-container:before, #earth-mob.earth-container:before {
+    padding-top: 0 !important;
+  }
+}
+#earth-copy#earth-mob, #earth-mob#earth-mob {
+  display: none;
+}
+#earth-copy#earth-mob .h5g_overlay, #earth-copy#earth-mob canvas, #earth-mob#earth-mob .h5g_overlay, #earth-mob#earth-mob canvas {
+  max-width: calc(100vh - 120px);
+  max-height: calc(100vh - 120px);
+  left: 0;
+  top: 0 !important;
+  transform: unset;
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy#earth-mob .h5g_overlay, #earth-copy#earth-mob canvas, #earth-mob#earth-mob .h5g_overlay, #earth-mob#earth-mob canvas {
+    max-width: calc(100vw - 2*var(--page-margin-left-ml));
+  }
+}
+@media only screen and (max-width: 570px) {
+  #earth-copy#earth-mob .h5g_overlay, #earth-copy#earth-mob canvas, #earth-mob#earth-mob .h5g_overlay, #earth-mob#earth-mob canvas {
+    max-width: calc(100vw - 2*var(--page-margin-left-m));
+  }
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy#earth-mob, #earth-mob#earth-mob {
+    display: block;
+    bottom: 0;
+    position: relative;
+    width: calc(100vw - 2*var(--page-margin-left-ml));
+    height: 100vw;
+    left: 0;
+    opacity: 1;
+    transform: unset;
+    top: 0 !important;
+    visibility: visible;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #earth-copy#earth-mob, #earth-mob#earth-mob {
+    width: calc(100vw - 2*var(--page-margin-left-m));
+  }
+}
+#earth-copy .earth-overlay, #earth-mob .earth-overlay {
+  position: absolute !important;
+}
+#earth-copy .port-ov, #earth-mob .port-ov {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  left: 0;
+  top: 0;
+  border-radius: var(--menu-border-radius);
+  pointer-events: all;
+  z-index: 100;
+  max-width: 300px;
+  background: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 5px;
+  position: relative;
+}
+#earth-copy .port-ov:before, #earth-mob .port-ov:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+@media only screen and (max-width: 1660px) {
+  #earth-copy .port-ov, #earth-mob .port-ov {
+    padding: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy .port-ov, #earth-mob .port-ov {
+    padding: 8px;
+  }
+}
+#earth-copy .port-ov:last-child, #earth-mob .port-ov:last-child {
+  margin-right: 0;
+}
+#earth-copy .port-ov .port, #earth-mob .port-ov .port {
+  font-weight: 700;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 0.9;
+}
+@media only screen and (max-width: 1660px) {
+  #earth-copy .port-ov .port, #earth-mob .port-ov .port {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #earth-copy .port-ov .port, #earth-mob .port-ov .port {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy .port-ov .port, #earth-mob .port-ov .port {
+    font-size: 11px;
+    line-height: 0.6;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #earth-copy .port-ov .port, #earth-mob .port-ov .port {
+    font-size: 3vw;
+  }
+}
+#earth-copy .port-ov .fuels, #earth-mob .port-ov .fuels {
+  font-size: 14px;
+  font-weight: 400;
+}
+@media only screen and (max-width: 1660px) {
+  #earth-copy .port-ov .fuels, #earth-mob .port-ov .fuels {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #earth-copy .port-ov .fuels, #earth-mob .port-ov .fuels {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy .port-ov .fuels, #earth-mob .port-ov .fuels {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #earth-copy .port-ov .fuels, #earth-mob .port-ov .fuels {
+    font-size: 3vw;
+  }
+}
+#earth-copy .port-ov .fuels .uparrow, #earth-mob .port-ov .fuels .uparrow {
+  color: white;
+}
+#earth-copy .port-ov .fuels .uparrow span, #earth-mob .port-ov .fuels .uparrow span {
+  font-size: 14px;
+}
+@media only screen and (max-width: 1660px) {
+  #earth-copy .port-ov .fuels .uparrow span, #earth-mob .port-ov .fuels .uparrow span {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy .port-ov .fuels .uparrow span, #earth-mob .port-ov .fuels .uparrow span {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #earth-copy .port-ov .fuels .uparrow span, #earth-mob .port-ov .fuels .uparrow span {
+    font-size: 3vw;
+  }
+}
+#earth-copy .port-ov .fuels .uparrow i, #earth-mob .port-ov .fuels .uparrow i {
+  padding-left: 0;
+  color: var(--color-six-hex);
+}
+#earth-copy .port-ov .fuels .downarrow, #earth-mob .port-ov .fuels .downarrow {
+  color: white;
+}
+#earth-copy .port-ov .fuels .downarrow span, #earth-mob .port-ov .fuels .downarrow span {
+  font-size: 14px;
+}
+@media only screen and (max-width: 1660px) {
+  #earth-copy .port-ov .fuels .downarrow span, #earth-mob .port-ov .fuels .downarrow span {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy .port-ov .fuels .downarrow span, #earth-mob .port-ov .fuels .downarrow span {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #earth-copy .port-ov .fuels .downarrow span, #earth-mob .port-ov .fuels .downarrow span {
+    font-size: 3vw;
+  }
+}
+#earth-copy .port-ov .fuels .downarrow i, #earth-mob .port-ov .fuels .downarrow i {
+  padding-left: 0;
+  color: #ec4141;
+}
+#earth-copy .port-ov div, #earth-mob .port-ov div {
+  font-weight: 400;
+}
+#earth-copy .port-ov span, #earth-mob .port-ov span {
+  color: white;
+  font-weight: 400;
+}
+#earth-copy canvas, #earth-mob canvas {
+  object-fit: cover;
+  object-position: right;
+}
+#earth-copy #glow, #earth-mob #glow {
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 80%;
+  padding-top: 80%;
+  position: absolute;
+  right: 0;
+  background: radial-gradient(ellipse at center, rgba(86, 136, 247, 0.41) 25%, rgba(0, 193, 255, 0.07) 53%, rgba(79, 175, 212, 0.08) 41%, rgba(0, 156, 255, 0) 70%);
+  z-index: 200;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+}
+@media only screen and (max-width: 1024px) {
+  #earth-copy #glow, #earth-mob #glow {
+    height: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #earth-copy #glow, #earth-mob #glow {
+    width: 100vw;
+    /* height: 400px; */
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 100vw;
+    transform: unset;
+  }
+}
+@media only screen and (max-width: 570px) {
+  #earth-copy #glow, #earth-mob #glow {
+    width: 140vw;
+    height: auto;
+    opacity: 0.5;
+    top: -50px;
+    left: -20vw;
+    position: absolute;
+    padding-top: 140vw;
+  }
+}
